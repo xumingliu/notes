@@ -1,0 +1,43 @@
+
+
+* package.json  -- Common
+
+```javascript
+{
+  "name": "debug-demo",
+  "version": "1.0.0",
+  "description": "debug demo",
+  "main": "app.js",
+  "scripts": {
+    "build": "babel src -d build -s inline",
+    "bw": "babel src -d build -w -s inline",
+    "releaseBuild": "babel lib -d release/lib --no-comments --compact true --minified"
+  },
+  "author": "lxm",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-loader": "^7.1.4",
+    "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-eslatest-node6": "^1.0.1"
+  }
+}
+```
+
+* .babelrc -- Debug in node (use es6 in node) 
+```javascript
+
+{
+    "presets": [ "babel-preset-eslatest-node6" ]
+}
+
+```
+
+* .babelrc -- Debug in browser (use es6 and import/export in browser) 
+```javascript
+{
+    "presets": [ "babel-preset-env" ],
+    "plugins": [ "babel-plugin-transform-es2015-modules-umd" ]
+}
+
+```
